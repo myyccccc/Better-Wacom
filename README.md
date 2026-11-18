@@ -12,7 +12,7 @@
 <p align="center">
   <a href="https://github.com/myyccccc/Better-Wacom/releases/latest"><img src="https://img.shields.io/github/v/release/myyccccc/Better-Wacom?label=download&color=0a84ff" alt="Download"></a>
   <img src="https://img.shields.io/badge/macOS-15%2B-black" alt="macOS 15+">
-  <img src="https://img.shields.io/badge/tablet-Intuos%20Pro%20M%20PTK--670-red" alt="Intuos Pro M PTK-670 only">
+  <img src="https://img.shields.io/badge/tablet-Intuos%20Pro%20M%20PTK--670-red" alt="Currently supports Intuos Pro M PTK-670">
   <a href="LICENSE"><img src="https://img.shields.io/github/license/myyccccc/Better-Wacom" alt="MIT License"></a>
 </p>
 
@@ -21,9 +21,10 @@
 </p>
 
 > [!IMPORTANT]
-> **Built for one tablet only: the Wacom Intuos Pro M (2025), model PTK-670** (USB `056A:03F7`).
+> **Currently supports one tablet: the Wacom Intuos Pro M (2025), model PTK-670** (USB `056A:03F7`).
 > The key layout, the dial behavior and the tablet drawing are all made for this model.
-> Other Wacom tablets, including other Intuos Pro sizes and older generations, are **not supported** and probably won't work.
+> Other Wacom tablets, including other Intuos Pro sizes and older generations, are **not supported yet**.
+> Support for more models is planned. See [Other tablets](#other-tablets).
 
 <p align="center">
   <img src="docs/images/keys-dark.png" alt="Better Wacom: ExpressKeys layout for DaVinci Resolve">
@@ -78,11 +79,15 @@ With an ad-hoc signature, macOS may ask you to allow Accessibility again after e
 
 Translations live in `scripts/l10n/*.json`. Run `python3 scripts/gen_strings.py --check` to find missing keys.
 
+## Other tablets
+
+Right now Better Wacom only supports the Intuos Pro M (2025, PTK-670). I plan to add more Wacom models over time.
+
+Each model needs its own HID report layout and its own drawing, so it helps a lot to hear from owners. If you'd like your tablet supported, open an issue with the model name and the output of `ioreg -p IOUSB -l | grep -i wacom`.
+
 ## Contributing
 
 Bug reports and pull requests are welcome.
-
-Supporting other tablets would need their HID report layouts and new drawings. If you have another model and want to help, open an issue with the output of `ioreg -p IOUSB -l | grep -i wacom`.
 
 If Better Wacom makes your tablet nicer to use, a ⭐ helps other Intuos Pro owners find it.
 

@@ -12,7 +12,7 @@
 <p align="center">
   <a href="https://github.com/myyccccc/Better-Wacom/releases/latest"><img src="https://img.shields.io/github/v/release/myyccccc/Better-Wacom?label=下载&color=0a84ff" alt="下载"></a>
   <img src="https://img.shields.io/badge/macOS-15%2B-black" alt="macOS 15+">
-  <img src="https://img.shields.io/badge/仅支持-Intuos%20Pro%20M%20PTK--670-red" alt="仅支持 PTK-670">
+  <img src="https://img.shields.io/badge/目前支持-Intuos%20Pro%20M%20PTK--670-red" alt="目前支持 PTK-670">
   <a href="LICENSE"><img src="https://img.shields.io/github/license/myyccccc/Better-Wacom" alt="MIT 许可"></a>
 </p>
 
@@ -21,9 +21,10 @@
 </p>
 
 > [!IMPORTANT]
-> **只适用于一款数位板：Wacom Intuos Pro M（2025），型号 PTK-670**（USB `056A:03F7`）。
+> **目前支持一款数位板：Wacom Intuos Pro M（2025），型号 PTK-670**（USB `056A:03F7`）。
 > 按键布局、波轮逻辑和数位板渲染图都是按这款机型做的。
-> 其他 Wacom 数位板（包括其他尺寸的 Intuos Pro 和旧款）**不支持**，基本无法使用。
+> 其他 Wacom 数位板（包括其他尺寸的 Intuos Pro 和旧款）**暂不支持**。
+> 以后会陆续适配更多型号，见下面的「其他型号」。
 
 <p align="center">
   <img src="docs/images/keys-dark.png" alt="Better Wacom：DaVinci Resolve 的按键布局">
@@ -82,11 +83,15 @@ cd Better-Wacom
 
 翻译在 `scripts/l10n/*.json`，运行 `python3 scripts/gen_strings.py --check` 可以检查缺失的条目。
 
+## 其他型号
+
+目前只支持 Intuos Pro M（2025，PTK-670），以后会陆续适配更多 Wacom 型号。
+
+每款机型都需要它自己的 HID 报告格式和渲染图，所以很需要用户反馈。想让你的数位板也能用，请开一个 Issue，写上型号，并附上 `ioreg -p IOUSB -l | grep -i wacom` 的输出。
+
 ## 参与
 
 欢迎提交 bug 和 Pull Request。
-
-要支持其他数位板，需要那款机型的 HID 报告格式和新的渲染图。如果你有其他型号并愿意帮忙，请开一个 Issue，附上 `ioreg -p IOUSB -l | grep -i wacom` 的输出。
 
 如果 Better Wacom 让你的数位板更好用，点个 ⭐ 能让更多 Intuos Pro 用户看到它。
 
